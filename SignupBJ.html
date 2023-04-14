@@ -1,0 +1,102 @@
+
+
+//Sign up page that allows users to sign up and create an account
+
+<html>
+         
+    <body style="background-color:powderblue;"></body>
+    <script>
+        
+                  
+        function passwordmatchandusernamelength() {
+var x = document.getElementById("password1").value;
+var y = document.getElementById("password2").value;
+var z = document.getElementById("username").value;
+
+  if (z.length < 6 || z.length > 24 ) {
+      alert("Username must between 6 and 24 characters");
+      return false;
+  } else if (x !=y  ) {
+      alert( "Passwords do not match");
+      return false;
+  } 
+
+  return true;
+     
+     } 
+        
+  
+function showdata() {
+
+ var username = document.getElementById("username").value;
+var email = document.getElementById("email_address").value;
+var password = document.getElementById("password1").value;
+var verifypassword = document.getElementById("password2").value;
+var checkbox = document.getElementById("checkbox").checked;
+ var referralcode =document.getElementById("referral_code").value;
+  
+  localStorage.setItem("textvalue1",username);
+  localStorage.setItem("textvalue1.1",username);
+  localStorage.setItem("textvalue2",email);
+  localStorage.setItem("textvalue3",password);
+  localStorage.setItem("textvalue5",verifypassword);
+  localStorage.setItem("textvalue4",checkbox);
+  localStorage.setItem("textvalue6",referralcode);
+
+
+
+}
+
+
+
+ function checkreferralcode() {
+ 
+  
+  
+   var z =document.getElementById("referral_code").value
+
+  if (z== "tucis" || z== "Tucis" || z== "bogo" || z== "Bogo"|| z== "eatgood" || z=="Eatgood" ) {
+
+
+      alert("This referral code is invalid");
+
+     return false;
+      
+
+
+}
+
+  return true
+
+} 
+
+
+    </script>
+
+<form method="post" action="connect.php?redirect=SBJ_completed.html"  onsubmit= "return showdata(),passwordmatchandusernamelength()">
+    <fieldset>
+        <legend><h4>Sign up</h4>
+        </legend>
+        
+
+    <label for="username">Username:</label><input type = "text" id = "username" name= "username"/><br> 
+
+
+
+<label for="email_addres">Email address:</label><input type = "email_address" id = "email_address" name=" email_address" /><br>
+
+<label for="password">Password:</label><input type = "password" id = "password1" name ="password"/><br>
+
+<label for="password">Verify Password:</label><input type = "password" id = "password2" name = "verify_password" /><br>
+
+<label for="checkbox">Sign up for our newsletter:</label><input type = "checkbox" id = "checkbox" name ="Sign up for our newsletter" /><br>
+<label for ="referral_code" >Referral Code:</label><input type = "referral_code" onkeyup="checkreferralcode()" id = "referral_code" name=" referral_code"/><br>
+<button type ="submit">submit</button>
+
+</fieldset>
+</form>
+
+<p id="output"></p>
+<fieldset>
+
+    </html>
