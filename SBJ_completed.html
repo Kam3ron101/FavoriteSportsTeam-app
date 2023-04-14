@@ -1,0 +1,41 @@
+
+// Page Lets the user know that they have successfully created an account
+
+
+<style>
+    h1{
+    
+        color: blue;
+    }
+    
+    </style>
+    
+    
+    <body>
+        <h1>Welcome   <span id ="result1"></span>   to Bet Junkies!</h1>
+        
+        <ul>
+     <li>Username: <span id ="result1.1"></span></li>
+     <li>Email: <span id ="result2"></span></li>
+      <li>Referral Code: <span id ="result6"></span> </li>
+      <li>Password: <span id ="result3"></span></li>
+      <li>Password verify: <span id ="result5"></span></li>
+      <li>checkbox: <span id ="result4"></span></li>
+    </ul>
+        <script>
+      document.getElementById("result1").innerHTML=localStorage.getItem("textvalue1");
+      document.getElementById("result1.1").innerHTML=localStorage.getItem("textvalue1");
+     document.getElementById("result2").innerHTML=localStorage.getItem("textvalue2");
+      document.getElementById("result3").innerHTML=localStorage.getItem("textvalue3");
+     document.getElementById("result5").innerHTML=localStorage.getItem("textvalue5");
+     document.getElementById("result4").innerHTML=localStorage.getItem("textvalue4");
+        
+    
+    
+    </script>
+            
+        
+    
+    
+    </body>
+            
